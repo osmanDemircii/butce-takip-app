@@ -51,7 +51,8 @@ Kişisel bütçe ve yatırım takip uygulaması. React + Firebase ile geliştiri
 
 ## 📁 Klasör Yapısı
 
-```src/
+```
+src/
 ├── components/
 │   ├── layout/          # AppLayout, BottomNav
 │   ├── home/            # DateNavigator, SummaryCards, Modals
