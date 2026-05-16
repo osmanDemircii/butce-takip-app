@@ -1,0 +1,28 @@
+.filter-tabs {
+  display: flex;
+  background-color: var(--input-bg);
+  border-radius: 14px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 1.25rem;
+}
+
+.filter-tab {
+  flex: 1;
+  padding: 0.6rem 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-tab--active {
+  background-color: var(--accent-main);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

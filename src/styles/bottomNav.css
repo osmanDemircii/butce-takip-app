@@ -1,0 +1,191 @@
+/* ══════════════════════════
+   MOBİL — Bottom Nav
+══════════════════════════ */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(65px + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: var(--bottom-nav-bg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-decoration: none;
+  color: var(--text-muted);
+  flex: 1;
+  height: 100%;
+  padding-top: 8px;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.bottom-nav__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 28px;
+  border-radius: 14px;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.bottom-nav__icon {
+  font-size: 1.35rem;
+  transition: transform 0.2s ease;
+}
+
+.bottom-nav__label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.bottom-nav__item--active {
+  color: var(--accent-main);
+}
+
+.bottom-nav__item--active .bottom-nav__icon-wrap {
+  background-color: color-mix(in srgb, var(--accent-main) 15%, transparent);
+  transform: translateY(-2px);
+}
+
+.bottom-nav__item--active .bottom-nav__icon {
+  transform: scale(1.1);
+}
+
+/* ══════════════════════════
+   DESKTOP — Sidebar Nav
+══════════════════════════ */
+@media (min-width: 768px) {
+  .bottom-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    width: 240px;
+    height: 100dvh;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 2rem 1rem;
+    border-top: none;
+    border-right: 1px solid var(--border-color);
+    gap: 0.25rem;
+  }
+
+  /* Logo alanı */
+  .bottom-nav::before {
+    content: "💰 Bütçe Takip";
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    padding: 0 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+    white-space: nowrap;
+  }
+
+  .bottom-nav__item {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 12px;
+    height: auto;
+    flex: 0;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .bottom-nav__item:hover {
+    background-color: var(--bg-card-hover);
+    color: var(--text-primary);
+  }
+
+  .bottom-nav__icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .bottom-nav__icon {
+    font-size: 1.2rem;
+  }
+
+  .bottom-nav__label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  .bottom-nav__item--active {
+    background-color: color-mix(in srgb, var(--accent-main) 12%, transparent);
+    color: var(--accent-main);
+  }
+
+  .bottom-nav__item--active .bottom-nav__icon-wrap {
+    transform: none;
+    background-color: color-mix(in srgb, var(--accent-main) 20%, transparent);
+  }
+
+  .bottom-nav__item--active .bottom-nav__icon {
+    transform: none;
+  }
+}
+
+/* ══════════════════════════
+   ÇIKIŞ BUTONU
+══════════════════════════ */
+.bottom-nav__logout {
+  display: none; /* Mobilde gizli */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent-red);
+  width: 100%;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .bottom-nav__logout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 12px;
+    margin-top: auto; /* En alta it */
+    transition: background-color 0.2s;
+  }
+
+  .bottom-nav__logout:hover {
+    background-color: color-mix(in srgb, var(--accent-red) 12%, transparent);
+  }
+
+  .bottom-nav__logout .bottom-nav__label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent-red);
+  }
+
+  .bottom-nav__logout .bottom-nav__icon {
+    color: var(--accent-red);
+    font-size: 1.2rem;
+  }
+}

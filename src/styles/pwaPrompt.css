@@ -1,0 +1,87 @@
+.pwa-prompt {
+  position: fixed;
+  bottom: calc(80px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 420px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: slideUpPrompt 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUpPrompt {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.pwa-prompt__content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.pwa-prompt__icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.pwa-prompt__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pwa-prompt__text strong {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+
+.pwa-prompt__text span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.pwa-prompt__actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.pwa-prompt__btn {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pwa-prompt__btn--cancel {
+  background-color: var(--input-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.pwa-prompt__btn--update {
+  background: linear-gradient(135deg, var(--accent-main), var(--accent-blue));
+  color: #fff;
+}
+
+.pwa-prompt__btn--update:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .pwa-prompt {
+    bottom: 2rem;
+    left: calc(240px + 1rem);
+    transform: none;
+  }
+}

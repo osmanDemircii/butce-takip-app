@@ -1,0 +1,51 @@
+.date-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.5rem;
+}
+
+.date-nav__btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.date-nav__btn:hover {
+  background-color: var(--bg-card-hover);
+  transform: scale(1.05);
+}
+
+.date-nav__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.date-nav__month {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.date-nav__year {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+
+@media (min-width: 768px) {
+  .date-nav {
+    padding: 0 0 1rem 0;
+  }
+}

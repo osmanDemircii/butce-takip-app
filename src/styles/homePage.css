@@ -1,0 +1,79 @@
+.home-page {
+  padding-bottom: 1rem;
+  min-height: 100%;
+  position: relative;
+}
+
+.home-loading {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.home-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent-main);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* FAB Butonları */
+.home-fabs {
+  position: fixed;
+  bottom: calc(75px + env(safe-area-inset-bottom));
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  z-index: 999;
+}
+
+.home-fab {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.1rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-fab:active {
+  transform: scale(0.96);
+}
+
+.home-fab--income {
+  background: linear-gradient(135deg, var(--accent-green), #00a878);
+}
+
+.home-fab--expense {
+  background: linear-gradient(135deg, var(--accent-red), #e63356);
+}
+
+.home-fab svg {
+  font-size: 1rem;
+}
+
+
+@media (min-width: 768px) {
+  .home-fabs {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  .home-page {
+    max-width: 900px;
+  }
+}

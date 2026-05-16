@@ -1,0 +1,124 @@
+.recent {
+  padding: 0.5rem 1rem 1rem;
+}
+
+.recent__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.recent__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.recent__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.recent__empty {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* tx-item — hem burada hem modalda kullanılır */
+.tx-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  transition: background-color 0.2s;
+}
+
+.tx-item:active {
+  background-color: var(--bg-card-hover);
+}
+
+.tx-item__icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tx-item__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.tx-item__category {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tx-item__date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.tx-item__desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tx-item__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.tx-item__amount {
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tx-item__delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 2px;
+  transition: color 0.2s;
+}
+
+.tx-item__delete:hover {
+  color: var(--accent-red);
+}
+
+@media (min-width: 768px) {
+  .recent {
+    padding: 1rem 0;
+  }
+
+  .recent__list {
+    gap: 0.75rem;
+  }
+
+  .tx-item {
+    padding: 1rem 1.25rem;
+  }
+}

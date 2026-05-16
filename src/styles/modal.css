@@ -1,0 +1,235 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-sheet {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--modal-bg);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 0 1.25rem 2rem;        
+  border-top: 1px solid var(--border-color);
+  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-height: 92dvh;
+  overflow-y: auto;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.modal-sheet {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--modal-bg);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 1.25rem 1.25rem 2rem;        
+  border-top: 1px solid var(--border-color);
+  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-height: 92dvh;
+  overflow-y: auto;
+}
+
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-top: 1rem;             /* Handle ile header arası boşluk */
+  position: sticky;
+  top: 0;
+  background-color: var(--modal-bg);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--bg-card-hover);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.modal-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.modal-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.modal-input,
+.modal-select {
+  padding: 0.7rem 0.9rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.modal-input:focus,
+.modal-select:focus {
+  border-color: var(--accent-main);
+}
+
+/* Kategori grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.category-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 0.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--input-bg);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-chip:hover {
+  border-color: var(--accent-main);
+  color: var(--accent-main);
+}
+
+.category-chip--active {
+  background: color-mix(in srgb, var(--accent-main) 12%, transparent);
+}
+
+.category-chip__icon {
+  font-size: 1.2rem;
+}
+
+.modal-submit {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.modal-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modal-submit:not(:disabled):hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+  .modal-overlay {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-sheet {
+    border-radius: 24px;
+    max-width: 520px;
+    padding: 0 2rem 2rem;
+    max-height: 85dvh;
+    animation: fadeScaleIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes fadeScaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .modal-handle {
+    display: none;
+  }
+}
+
+/* Liste modalı — ekle butonu */
+.txlist-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.75rem;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.txlist-add-btn:hover {
+  opacity: 0.8;
+}

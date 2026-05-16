@@ -1,0 +1,227 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.settings__section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.75rem;
+}
+
+/* ── Görünüm Modu (Gece/Gündüz) ── */
+.theme-mode-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.theme-mode-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1rem 0.5rem;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-mode-card:hover {
+  border-color: var(--accent-main);
+  transform: translateY(-2px);
+}
+
+.theme-mode-card--active {
+  border-color: var(--accent-main);
+  background: color-mix(in srgb, var(--accent-main) 8%, transparent);
+}
+
+/* ── Renk Teması Grid ── */
+.theme-color-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+}
+
+.theme-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.85rem 0.5rem;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-card:hover {
+  border-color: var(--accent-main);
+  transform: translateY(-2px);
+}
+
+.theme-card--active {
+  border-color: var(--accent-main);
+  background: color-mix(in srgb, var(--accent-main) 8%, transparent);
+}
+
+.theme-card__preview {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 0.2rem;
+}
+
+.theme-card__color {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.theme-card__emoji {
+  font-size: 1.2rem;
+}
+
+.theme-card__name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.theme-card__check {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-main);
+}
+
+/* ── Ayarlar Listesi ── */
+.settings__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.settings__item:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.settings__item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.settings__item-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.settings__item-icon--green {
+  background: color-mix(in srgb, var(--accent-green) 15%, transparent);
+  color: var(--accent-green);
+}
+
+.settings__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.settings__item-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.settings__item-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.settings__item-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ── Çıkış ── */
+.settings__logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: color-mix(in srgb, var(--accent-red) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-red) 30%, transparent);
+  border-radius: 14px;
+  color: var(--accent-red);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.settings__logout:hover {
+  background: color-mix(in srgb, var(--accent-red) 20%, transparent);
+  transform: translateY(-1px);
+}
+
+/* Şifre başarı */
+.pw-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: var(--accent-green);
+}
+
+.pw-success span { font-size: 2.5rem; }
+.pw-success p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .theme-color-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .theme-mode-row {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+  }
+}

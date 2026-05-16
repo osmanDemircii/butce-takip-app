@@ -1,0 +1,84 @@
+.an-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.an-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.an-card__label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.an-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.an-card__dot--green { background-color: var(--accent-green); }
+.an-card__dot--red   { background-color: var(--accent-red);   }
+.an-card__dot--blue  { background-color: var(--accent-blue);  }
+
+.an-card__amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.an-card__amount--red  { color: var(--accent-red);   }
+.an-card__amount--blue { color: var(--accent-blue);  }
+
+.an-card__sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Progress bar */
+.an-progress {
+  height: 6px;
+  background-color: var(--border-color);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.4rem;
+}
+
+.an-progress__fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.an-progress__fill--green {
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+}
+
+@media (min-width: 768px) {
+  .an-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .an-card__amount {
+    font-size: 1.6rem;
+  }
+}

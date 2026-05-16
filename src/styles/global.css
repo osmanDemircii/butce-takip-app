@@ -1,0 +1,197 @@
+/* ══════════════════════════════════
+   🌙 DARK — Gece
+══════════════════════════════════ */
+[data-theme="dark"] {
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a2e;
+  --bg-card: #16213e;
+  --bg-card-hover: #1f2d4a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0b0;
+  --text-muted: #606070;
+  --accent-green: #00c896;
+  --accent-red: #ff4d6d;
+  --accent-blue: #00b4d8;
+  --accent-main: #00c896;
+  --border-color: #2a2a4a;
+  --bottom-nav-bg: #12122a;
+  --modal-bg: #1a1a2e;
+  --input-bg: #0f0f1a;
+}
+
+/* ══════════════════════════════════
+   ☀️ LIGHT — Gündüz
+══════════════════════════════════ */
+[data-theme="light"] {
+  --bg-primary: #f0f2f5;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8f9fa;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a6a;
+  --text-muted: #9090a0;
+  --accent-green: #00a878;
+  --accent-red: #e63356;
+  --accent-blue: #0096c7;
+  --accent-main: #00a878;
+  --border-color: #e0e0f0;
+  --bottom-nav-bg: #ffffff;
+  --modal-bg: #ffffff;
+  --input-bg: #f5f5ff;
+}
+
+/* ══════════════════════════════════
+   🌊 OCEAN — Okyanus
+══════════════════════════════════ */
+[data-theme="ocean"] {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0d2137;
+  --bg-card: #0f2744;
+  --bg-card-hover: #143352;
+  --text-primary: #cce8ff;
+  --text-secondary: #7ab8e8;
+  --text-muted: #3a6a9a;
+  --accent-green: #00ffc8;
+  --accent-red: #ff5577;
+  --accent-blue: #00d4ff;
+  --accent-main: #00d4ff;
+  --border-color: #1a3a5c;
+  --bottom-nav-bg: #080f1e;
+  --modal-bg: #0d2137;
+  --input-bg: #071020;
+}
+
+/* ══════════════════════════════════
+   🌅 SUNSET — Gün Batımı
+══════════════════════════════════ */
+[data-theme="sunset"] {
+  --bg-primary: #1a0a0f;
+  --bg-secondary: #2d1020;
+  --bg-card: #3a1528;
+  --bg-card-hover: #451a30;
+  --text-primary: #ffe8d0;
+  --text-secondary: #e8a080;
+  --text-muted: #8a4a30;
+  --accent-green: #ffb347;
+  --accent-red: #ff4466;
+  --accent-blue: #ff6b35;
+  --accent-main: #ff6b35;
+  --border-color: #5a2030;
+  --bottom-nav-bg: #120508;
+  --modal-bg: #2d1020;
+  --input-bg: #100508;
+}
+
+/* ══════════════════════════════════
+   🌿 FOREST — Orman
+══════════════════════════════════ */
+[data-theme="forest"] {
+  --bg-primary: #0a1a0f;
+  --bg-secondary: #0f2d1a;
+  --bg-card: #143820;
+  --bg-card-hover: #1a4428;
+  --text-primary: #d0f0d8;
+  --text-secondary: #80c890;
+  --text-muted: #3a6a48;
+  --accent-green: #4cff7a;
+  --accent-red: #ff5555;
+  --accent-blue: #5ce8b0;
+  --accent-main: #4caf50;
+  --border-color: #1e4a28;
+  --bottom-nav-bg: #070f08;
+  --modal-bg: #0f2d1a;
+  --input-bg: #060d07;
+}
+
+/* ══════════════════════════════════
+   🔮 PURPLE — Galaksi
+══════════════════════════════════ */
+[data-theme="purple"] {
+  --bg-primary: #0d0a1a;
+  --bg-secondary: #1a1030;
+  --bg-card: #221540;
+  --bg-card-hover: #2a1a50;
+  --text-primary: #e8d8ff;
+  --text-secondary: #b088e8;
+  --text-muted: #604888;
+  --accent-green: #a78bfa;
+  --accent-red: #f472b6;
+  --accent-blue: #818cf8;
+  --accent-main: #9c27b0;
+  --border-color: #3a2060;
+  --bottom-nav-bg: #080510;
+  --modal-bg: #1a1030;
+  --input-bg: #060310;
+}
+
+/* ══════════════════════════════════
+   GLOBAL RESET
+══════════════════════════════════ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+/* ══════════════════════════════════
+   BOOTSTRAP OVERRIDE
+══════════════════════════════════ */
+.card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content {
+  background-color: var(--modal-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.form-control,
+.form-select {
+  background-color: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--accent-main), 0.25) !important;
+  border-color: var(--accent-main) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* ══════════════════════════════════
+   TEMA GEÇİŞ ANİMASYONU
+══════════════════════════════════ */
+*, *::before, *::after {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.2s ease;
+}

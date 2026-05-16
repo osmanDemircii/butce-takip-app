@@ -1,0 +1,136 @@
+.summary {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.summary__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.summary__card {
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.summary__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  border-radius: inherit;
+}
+
+.summary__card:active {
+  transform: scale(0.97);
+}
+
+/* Gelir */
+.summary__card--income {
+  background: linear-gradient(135deg, #00c89622, #00c89610);
+  border-color: #00c89640;
+}
+.summary__card--income::before {
+  background: var(--accent-green);
+}
+.summary__card--income .summary__icon,
+.summary__card--income .summary__amount {
+  color: var(--accent-green);
+}
+
+/* Gider */
+.summary__card--expense {
+  background: linear-gradient(135deg, #ff4d6d22, #ff4d6d10);
+  border-color: #ff4d6d40;
+}
+.summary__card--expense::before {
+  background: var(--accent-red);
+}
+.summary__card--expense .summary__icon,
+.summary__card--expense .summary__amount {
+  color: var(--accent-red);
+}
+
+/* Bakiye — pozitif */
+.summary__card--balance {
+  cursor: default;
+}
+.summary__card--positive {
+  background: linear-gradient(135deg, #00b4d822, #00b4d810);
+  border-color: #00b4d840;
+}
+.summary__card--positive .summary__icon,
+.summary__card--positive .summary__amount {
+  color: var(--accent-blue);
+}
+
+/* Bakiye — negatif */
+.summary__card--negative {
+  background: linear-gradient(135deg, #ff4d6d22, #ff4d6d10);
+  border-color: #ff4d6d40;
+}
+.summary__card--negative .summary__icon,
+.summary__card--negative .summary__amount {
+  color: var(--accent-red);
+}
+
+.summary__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.summary__icon {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.summary__label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.summary__amount {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.summary__amount--large {
+  font-size: 1.35rem;
+}
+
+@media (min-width: 768px) {
+  .summary {
+    padding: 1rem 0;
+  }
+
+  .summary__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .summary__card {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .summary__amount {
+    font-size: 1.4rem;
+  }
+
+  .summary__amount--large {
+    font-size: 1.6rem;
+  }
+}
