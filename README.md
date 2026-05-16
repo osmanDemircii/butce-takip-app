@@ -50,7 +50,8 @@ Kişisel bütçe ve yatırım takip uygulaması. React + Firebase ile geliştiri
 ---
 
 ## 📁 Klasör Yapısı
-src/
+
+```src/
 ├── components/
 │   ├── layout/          # AppLayout, BottomNav
 │   ├── home/            # DateNavigator, SummaryCards, Modals
@@ -59,8 +60,8 @@ src/
 │   ├── profile/         # UserInfo, SettingsMenu
 │   └── shared/          # ConfirmModal, LoadingSpinner
 ├── context/
-│   ├── ThemeContext.jsx  # 6 tema yönetimi
-│   └── AuthContext.jsx   # Oturum yönetimi
+│   ├── ThemeContext.jsx # 6 tema yönetimi
+│   └── AuthContext.jsx  # Oturum yönetimi
 ├── firebase/
 │   ├── firebaseConfig.js
 │   ├── authService.js
@@ -70,13 +71,15 @@ src/
 │   ├── useTransactions.js
 │   └── useInvestments.js
 ├── pages/
-│   ├── auth/LoginPage.jsx
+│   ├── auth/
+│   │   └── LoginPage.jsx
 │   ├── HomePage.jsx
 │   ├── AnalyticsPage.jsx
 │   ├── FinancePage.jsx
 │   └── ProfilePage.jsx
 ├── styles/              # Tüm CSS dosyaları
 └── utils/               # formatCurrency, formatDate, categoryIcons
+```
 
 ---
 
