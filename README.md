@@ -25,7 +25,7 @@ Kişisel bütçe ve yatırım takip uygulaması. React + Firebase ile geliştiri
 - 📈 **Yatırım Yönetimi** — Bitcoin, Hisse, Döviz, Borç, Kredi takibi
 - 📊 **Analiz Sayfası** — Haftalık/Aylık/Yıllık pasta grafiği
 - 🎨 **6 Tema** — Gece/Gündüz modu + Ocean, Sunset, Forest, Galaksi renk temaları
-- 📱 **PWA Desteği** — Telefona yüklenebilir, offline çalışır
+- 📱 **PWA Desteği** — Telefona yüklenebilir
 - 🖥️ **Responsive Tasarım** — Mobil bottom nav, desktop sidebar
 - ✏️ **Düzenle/Sil** — Onay modalı ile güvenli silme
 - 🔑 **Şifre Değiştir** — Mevcut şifre doğrulamalı güvenli güncelleme
