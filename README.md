@@ -92,7 +92,7 @@ src/
 
 ### 1. Repoyu Klonla
 ```bash
-git clone https://github.com/kullanici-adi/butce-takip-app.git
+git clone https://github.com/osmanDemircii/butce-takip-app.git
 cd butce-takip-app
 ```
 
