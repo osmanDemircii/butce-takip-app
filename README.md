@@ -133,6 +133,7 @@ npm run preview
 ---
 
 ## 🔥 Firebase Firestore Yapısı
+```
 users/{userId}
 ├── name: string
 ├── email: string
@@ -154,7 +155,7 @@ investments/{investmentId}
 ├── currency: string
 ├── type: "Borç"|"Kredi"|"Bitcoin"|"Hisse"|"Döviz"|"Diğer"
 └── date: timestamp
-
+```
 ---
 
 ## 🔒 Firestore Güvenlik Kuralları
